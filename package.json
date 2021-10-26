@@ -1,7 +1,6 @@
 {
-  "name": "design-system",
+  "name": "@larryschirmer/design-system",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -21,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "roll": "rollup -c"
+    "roll": "rollup -c",
+    "prepublishOnly": "yarn roll"
   },
   "eslintConfig": {
     "extends": [

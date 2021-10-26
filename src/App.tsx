@@ -1,10 +1,10 @@
 import React from "react";
 
-import Button from "./components/button";
+import TestComponent from "./components/TestComponent";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,9 +20,9 @@ function App() {
           Learn React
         </a>
       </header>
-      <Button>Hello</Button>
+      <TestComponent theme="primary" />
     </div>
   );
-}
+};
 
 export default App;

@@ -25,7 +25,9 @@ const config = {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    postcss(),
+    postcss({
+      extensions: [".css"],
+    }),
   ],
 };
 

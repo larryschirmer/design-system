@@ -10,3 +10,5 @@ ReactDOM.render(
   </StrictMode>,
   document.getElementById("root")
 );
+
+export { default as TestComponent } from "./components/TestComponent";

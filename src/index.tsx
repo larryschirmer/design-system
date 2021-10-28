@@ -11,4 +11,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-export { default as TestComponent } from "./components/TestComponent";
+export { default as Button } from "./components/publish/Button";
+export { default as Input } from "./components/publish/formElements/Input";
+export { default as RadioToggle } from "./components/publish/formElements/RadioToggle";

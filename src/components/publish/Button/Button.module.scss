@@ -1,0 +1,19 @@
+@import "../../../styles/vars";
+
+.button {
+  width: fit-content;
+  background-color: $primary-default;
+  border: 0.1rem solid $primary-default;
+  border-radius: 0.4rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.6rem;
+  color: $grey-1;
+  &.secondary {
+    border: 0.1rem solid $grey-5;
+    background-color: $grey-1;
+    color: $grey-8;
+  }
+  span {
+    margin-left: 1rem;
+  }
+}

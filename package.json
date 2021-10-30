@@ -24,7 +24,9 @@
     "eject": "react-scripts eject",
     "roll": "rollup -c",
     "prepublishOnly": "rm -r lib && yarn roll",
-    "roll-out": "npm publish --access public"
+    "roll-out": "npm publish --access public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -33,6 +35,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -50,6 +62,12 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/node-logger": "^6.3.12",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.12",
     "@testing-library/dom": "^8.10.1",
     "@types/react": "^17.0.31",
     "@types/react-dom": "^17.0.10",

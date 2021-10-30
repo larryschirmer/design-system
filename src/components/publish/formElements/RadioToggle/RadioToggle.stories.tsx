@@ -21,9 +21,9 @@ const Template: Story<Props> = (args) => {
   );
 };
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.args = {
+Default.args = {
   name: "share",
   currentValue: "no",
   buttons: [

@@ -13,7 +13,7 @@ type RadioButton = {
   label: string;
 };
 
-type Props = {
+export type Props = {
   name: string;
   currentValue: string;
   buttons: RadioButton[];

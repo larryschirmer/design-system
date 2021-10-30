@@ -8,9 +8,7 @@ export default {
   title: "Components/Button",
 } as Meta;
 
-const Template: Story<Props> = ({ children, isSecondary, type }) => (
-  <Button {...{ isSecondary, type }}>{children}</Button>
-);
+const Template: Story<Props> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 

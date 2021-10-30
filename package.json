@@ -26,7 +26,8 @@
     "prepublishOnly": "rm -r lib && yarn roll",
     "roll-out": "npm publish --access public",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -69,6 +70,7 @@
     "@storybook/node-logger": "^6.3.12",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.12",
+    "@storybook/storybook-deployer": "^2.8.10",
     "@storybook/theming": "^6.3.12",
     "@testing-library/dom": "^8.10.1",
     "@types/react": "^17.0.31",
@@ -80,6 +82,6 @@
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "sass": "^1.43.3",
-    "typescript": "^4.4.4"
+    "typescript": "4.1.6"
   }
 }

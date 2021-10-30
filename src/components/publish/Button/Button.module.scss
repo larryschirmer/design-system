@@ -8,12 +8,18 @@
   padding: 0.8rem 2rem;
   font-size: 1.6rem;
   color: $grey-1;
+  cursor: pointer;
   &.secondary {
     border: 0.1rem solid $grey-5;
-    background-color: $grey-1;
+    background-color: $primary-light-bg;
     color: $grey-8;
+    &:hover {
+      background-color: $grey-4;
+      border-color: $grey-10;
+    }
   }
-  span {
-    margin-left: 1rem;
+  &:hover {
+    background-color: $grey-8;
+    border-color: $grey-8;
   }
 }

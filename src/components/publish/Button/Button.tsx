@@ -5,7 +5,7 @@ import styles from "./Button.module.scss";
 
 const { button: buttonClass, secondary: secondaryClass } = styles;
 
-type Props = {
+export type Props = {
   children: ReactNode;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   isSecondary?: boolean;

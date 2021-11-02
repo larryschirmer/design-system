@@ -1,5 +1,7 @@
 import React, { useRef, useMemo, useEffect } from "react";
 import merge from "lodash/merge";
+import zipObject from "lodash/zipObject";
+import format from "date-fns/format";
 import { select } from "d3-selection";
 import { line } from "d3-shape";
 
@@ -58,25 +60,17 @@ const InlineFreqGraph = ({ data, color }: Props) => {
       .sort((a, b) => a.dt - b.dt);
 
     const { dates, amts } = reducedDates.reduce<{
-      dates: number[];
+      dates: string[];
       amts: number[];
     }>(
       (prog, { dt, amt }) => ({
-        dates: [...prog.dates, dt],
+        dates: [...prog.dates, format(new Date(dt), "MM-dd-yy")],
         amts: [...prog.amts, amt],
       }),
       { dates: [], amts: [] }
     );
 
-    return new Array(7).fill({}).map((_, idx) => {
-      const datesWeekly = padWeekly(dates);
-      const amtsWeekly = new Array(7)
-        .fill(0)
-        .map((_, i) => amts[amts.length - 1 - i] ?? 0)
-        .reverse();
-
-      return { dt: datesWeekly[idx], amt: amtsWeekly[idx] ?? 0 };
-    });
+    return padWeekly(zipObject(dates, amts));
   }, [data]);
 
   const xScale = useMemo(() => {

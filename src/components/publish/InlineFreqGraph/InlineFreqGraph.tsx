@@ -7,8 +7,6 @@ import { line } from "d3-shape";
 
 import { d3, padWeekly } from "../../../utils";
 
-import styles from "./InlineFreqGraph.module.scss";
-
 const { makeTimeScale, makeLinearScale, processBounds, makeAccessor } = d3;
 
 export const defaultDimension = {
@@ -102,11 +100,9 @@ const InlineFreqGraph = ({ data, color }: Props) => {
   }, [color, plot]);
 
   return (
-    <div className={styles.inlineLineGraph}>
-      <svg width={dimensions.width} height={dimensions.height}>
-        <path ref={svgRef} />
-      </svg>
-    </div>
+    <svg width={dimensions.width} height={dimensions.height}>
+      <path ref={svgRef} />
+    </svg>
   );
 };
 

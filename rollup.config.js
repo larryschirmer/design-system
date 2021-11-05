@@ -1,4 +1,4 @@
-import excludeDependenciesFromBundle from 'rollup-plugin-exclude-dependencies-from-bundle';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
@@ -21,10 +21,7 @@ const config = {
     },
   ],
   plugins: [
-    excludeDependenciesFromBundle({
-      peerDependencies: true,
-      dependencies: true,
-    }),
+    peerDepsExternal(),
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),

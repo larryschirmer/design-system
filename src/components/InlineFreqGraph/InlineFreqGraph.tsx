@@ -5,7 +5,7 @@ import format from "date-fns/format";
 import { select } from "d3-selection";
 import { line } from "d3-shape";
 
-import { d3, padWeekly } from "../../../utils";
+import { d3, padWeekly } from "../../utils";
 
 const { makeTimeScale, makeLinearScale, processBounds, makeAccessor } = d3;
 

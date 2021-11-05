@@ -25,9 +25,7 @@
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "react-wordcloud": "^1.2.7",
-    "web-vitals": "^1.0.1"
+    "react-wordcloud": "^1.2.7"
   },
   "scripts": {
     "roll": "rollup -c",
@@ -82,6 +80,7 @@
     "@types/react": "^17.0.31",
     "@types/react-dom": "^17.0.10",
     "postcss": "^8.3.11",
+    "react-scripts": "^4.0.3",
     "rollup": "^2.58.3",
     "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.21",
     "rollup-plugin-postcss": "^4.0.1",

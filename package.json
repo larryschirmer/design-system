@@ -11,15 +11,21 @@
   ],
   "dependencies": {},
   "scripts": {
-    "build": "rollup -c"
+    "build": "run() { rollup -c --package=$1; }; run",
+    "clean": "run() { cd src/$1 && rimraf build; }; run",
+    "version-and-publish": "run() { yarn clean $1 && yarn build $1 && version=$(cd src/$1 && npm version --no-git-tag-version $2) && (cd src/$1 && npm publish --registry=https://npm.pkg.github.com/) && git add src/$1 && git commit -m \"$1 - $version\" && git push; }; run",
+    "patch": "run() { yarn version-and-publish $1 patch; }; run",
+    "minor": "run() { yarn version-and-publish $1 minor; }; run",
+    "major": "run() { yarn version-and-publish $1 major; }; run"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
     "@babel/preset-react": "^7.18.6",
     "@rollup/plugin-babel": "^5.3.1",
-    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
+    "@rollup/plugin-url": "^7.0.0",
     "@types/react": "^18.0.19",
     "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",

@@ -1,6 +1,6 @@
 {
   "name": "@larryschirmer/design-system-button",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "repository": "git://github.com/larryschirmer/design-system.git",

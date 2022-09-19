@@ -5,6 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import url from '@rollup/plugin-url';
 import json from '@rollup/plugin-json';
+import dts from 'rollup-plugin-dts';
 const { readdirSync, statSync } = require('fs');
 const { join } = require('path');
 
@@ -41,7 +42,19 @@ const config = (moduleDir) => ({
   ],
 });
 
+const configTypes = (moduleDir) => ({
+  input: `src/${moduleDir}/index.ts`,
+  output: [
+    {
+      file: `src/${moduleDir}/build/index.d.ts`,
+      format: 'es',
+    },
+  ],
+  plugins: [dts()],
+});
+
 export default (commandLineArgs) => {
-  if (commandLineArgs.hasOwnProperty('package')) return [config(commandLineArgs.package)];
-  return modules.map((m) => config(m));
+  if (commandLineArgs.hasOwnProperty('package'))
+    return [config(commandLineArgs.package), configTypes(commandLineArgs.package)];
+  return modules.flatMap((m) => [config(m), configTypes(m)]);
 };
